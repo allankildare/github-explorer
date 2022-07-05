@@ -1,5 +1,6 @@
 :root {
-  font-family: 'Roboto', sans-serif
+  --gray: rgb(20, 20, 20);
+  font-family: 'Roboto', sans-serif;
 }
 
 * {
