@@ -1,0 +1,16 @@
+.commitCard {
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    padding: .5rem;
+    white-space: nowrap;
+    margin-bottom: .5rem;
+    h2 {
+        font-size: 1.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .date {
+        font-style: italic;
+    }
+}
