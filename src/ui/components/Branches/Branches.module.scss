@@ -1,0 +1,30 @@
+.repositoryBranches {
+    display: flex;
+    flex-direction: column;
+    width: calc(30vw - 2rem);
+
+    header {
+        margin-bottom: 1rem;
+        h1 {
+            font-weight: 500;
+        }
+        .explanation {
+            font-style: italic;
+        }
+    }
+
+    label {
+        line-height: 1.6;
+    }
+
+    & > div {
+        width: 100%;
+    }
+
+    select {
+        background-color: var(--light-gray);
+        border-radius: 6px;
+        height: 2rem;
+        width: 260px;
+    }
+}
