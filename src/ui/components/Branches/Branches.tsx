@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react'
-import { If, For, Choose } from 'react-extras'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { For, Choose } from 'react-extras'
 import { useParams } from 'react-router-dom'
 import { getBranches } from '~/services'
 import { BranchContext } from '~/contexts'
@@ -20,11 +20,10 @@ export function Branches() {
     isFetched: isBranchesFetched,
   } = getBranches({
     user,
-    repoName: repository,
-    enabled: Boolean(user && repository),
+    repoName: repository
   })
 
-  const handleBranchChange = ({ target }) => {
+  const handleBranchChange = ({ target }: ChangeEvent<HTMLSelectElement>) => {
     setSelectedBranch(target.value)
   }
 
@@ -52,40 +51,42 @@ export function Branches() {
   return (
     <div className={style.repositoryBranches}>
       <header>
-      <h1>
-        Branches do repositório <em>{repository}</em>
-      </h1>
-      <p className={style.explanation}>
-        A branch padrão geralmente é <strong>main</strong> ou{' '}
-        <strong>master</strong>
-      </p>
+        <h1>
+          Branches do repositório <em>{repository}</em>
+        </h1>
+        <p className={style.explanation}>
+          A branch padrão geralmente é <strong>main</strong> ou{' '}
+          <strong>master</strong>
+        </p>
       </header>
       <label>Selecione a branch e veja o histórico de commits</label>
       <Choose>
-      <Choose.When condition={isBranchesLoading}>
-        <p>Carregando branches...</p>
-      </Choose.When>
+        <Choose.When condition={isBranchesLoading}>
+          <p>Carregando branches...</p>
+        </Choose.When>
 
-      <Choose.When condition={isBranchesError}>
-        <p style={{ color: '#b82725' }}>Infelizmente ocorreu um erro ao carregar as branches {':('}</p>
-      </Choose.When>
-      <Choose.When condition={hasBranchesAndIsSuccess}>
-        <select defaultValue="branches" onChange={handleBranchChange}>
-          <option value="branches" disabled>
-            Selecione a branch...
-          </option>
-          <For
-            of={branches}
-            render={(branch, index) => {
-              return (
-                <option key={`branch-${index}`} value={branch?.name}>
-                  {branch?.name}
-                </option>
-              )
-            }}
-          />
-        </select>
-      </Choose.When>
+        <Choose.When condition={isBranchesError}>
+          <p style={{ color: '#b82725' }}>
+            Infelizmente ocorreu um erro ao carregar as branches {':('}
+          </p>
+        </Choose.When>
+        <Choose.When condition={hasBranchesAndIsSuccess}>
+          <select defaultValue="branches" onChange={handleBranchChange}>
+            <option value="branches" disabled>
+              Selecione a branch...
+            </option>
+            <For
+              of={branches}
+              render={(branch, index) => {
+                return (
+                  <option key={`branch-${index}`} value={branch?.name}>
+                    {branch?.name}
+                  </option>
+                )
+              }}
+            />
+          </select>
+        </Choose.When>
       </Choose>
     </div>
   )
