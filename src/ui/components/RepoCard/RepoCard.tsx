@@ -1,9 +1,8 @@
 import { If } from 'react-extras'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import style from './RepoCard.module.scss'
 
 interface RepoCardProps {
-  user: string
   name: string
   description: string
   url: string
@@ -11,7 +10,8 @@ interface RepoCardProps {
 }
 
 export function RepoCard(props: RepoCardProps) {
-  const { user, name, description, url, language } = props
+  const { name, description, url, language } = props
+  const { user } = useParams()
 
   return (
     <div className={style.repoCard}>
