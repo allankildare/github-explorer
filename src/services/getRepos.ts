@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { apiClient } from '~/clients'
+import { Repository } from '~/types'
 import { USERS_ENDPOINT } from './endpoints'
 
 export function getRepos(user?: string) {
@@ -11,7 +12,7 @@ export function getRepos(user?: string) {
         enabled: Boolean(user)
     })
 
-    const response = data?.data
+    const response = data?.data as Repository[]
 
     return { data: response, ...restQuery }
 }
