@@ -1,1 +1,1 @@
-export type { Repository } from './github-api'
+export type { Commit, Repository } from './github-api'
