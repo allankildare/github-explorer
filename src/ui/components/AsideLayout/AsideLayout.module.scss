@@ -1,0 +1,18 @@
+.asideLayout {
+    display: flex;
+    height: calc(100vh - 54px);
+    
+    & > aside {
+        min-height: calc(100vh - 54px);
+        width: 30vw;
+        padding: 1rem;
+        background-color: var(--medium-gray);
+        
+    }
+    & > section {
+        width: 100%;
+        padding-left: 1.5rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
