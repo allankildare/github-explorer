@@ -1,0 +1,46 @@
+.header {
+    background-color: var(--gray);
+
+    .responsiveMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        margin: 0 auto;
+        max-width: 1920px;
+
+        button {
+            background-color: transparent;
+            border: none;
+            
+            & > svg {
+                vertical-align: middle;
+                
+                &:hover {
+                    cursor: pointer;
+                    animation: backMovement .7s infinite alternate ease-in-out;
+                }
+            }
+        }
+        /* forcing title to stay in the center */
+        & > nav {
+            width: 33%;
+        }
+
+        & > nav:last-child {
+            text-align: end;
+            a {
+                color: var(--light-gray);
+            }
+        }
+    }
+}
+
+@keyframes backMovement {
+    from {
+      transform: translateX(0);
+    } to {
+      transform: translateX(-8px);
+    }
+  }
