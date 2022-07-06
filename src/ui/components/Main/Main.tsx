@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, KeyboardEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineSearch } from 'react-icons/ai'
 import './Main.scss'
@@ -7,12 +7,12 @@ export function Main() {
   const [user, setUser] = useState('')
   const navigate = useNavigate()
 
-  const handleChange = ({ target }) => {
+  const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     const { value } = target
     setUser(value)
   }
 
-  const handleKeyDown = ({ keyCode, key }) => {
+  const handleKeyDown = ({ keyCode, key }: KeyboardEvent<HTMLInputElement>) => {
     if (keyCode === 13 || key === 'Enter') navigate(`/${user}`)
   }
 
