@@ -28,6 +28,15 @@ interface CommitData {
     url: string
 }
 
+export interface Branch {
+    name: string
+    protected: boolean
+    commit: {
+        sha: string
+        url: string
+    }
+}
+
 export interface Commit {
     author: Author
     commit: CommitData
