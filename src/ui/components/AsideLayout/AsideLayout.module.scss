@@ -15,4 +15,28 @@
         overflow-x: hidden;
         overflow-y: scroll;
     }
+
+    @media only screen and (max-width: 960px) {
+        flex-direction: column;
+        height: calc(100vh - 92px);
+        & > aside {
+            min-height: 180px;
+            
+            width: 100%;
+            & > div {
+                width: 100%;
+                text-align: center;
+                select {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        & > section {
+            h1 {
+               text-align: center; 
+            }
+            height: 100%;
+        }
+    }
 }
