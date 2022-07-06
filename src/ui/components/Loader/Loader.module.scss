@@ -1,0 +1,23 @@
+.centeredLoader {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    
+    .loader {
+        width: 60px;
+        height: 60px;
+        border: 5px solid var(--light-gray);
+        border-top-color: #5b7acf;
+        border-radius: 50%;
+        animation: rotateLoading .7s infinite ease;
+    }
+}
+
+@keyframes rotateLoading {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
+}
