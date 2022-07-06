@@ -21,6 +21,7 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "eol-last": "error",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "sort-exports/sort-exports": [
       "error",
       {
