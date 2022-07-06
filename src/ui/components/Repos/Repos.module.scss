@@ -1,0 +1,12 @@
+.repositoriesSection {
+    margin: 1rem 2rem 1rem;
+    min-height: calc(100vh - 54px - 1rem); /* 100% of viewport - header - padding bottom */
+
+    .repositories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
