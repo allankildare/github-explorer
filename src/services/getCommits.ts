@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { apiClient } from '~/clients'
+import { Commit } from '~/types'
 import { COMMITS, REPOSITORIES_ENDPOINT } from './endpoints'
 
 interface GetCommitsParams {
@@ -17,7 +18,7 @@ export function getCommits({ user, repoName, commitSha }: GetCommitsParams) {
         enabled: Boolean(user && repoName && commitSha)
     })
 
-    const response = data?.data
+    const response = data?.data as Commit[]
 
     return { data: response, ...restQuery }
 }
