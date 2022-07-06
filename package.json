@@ -1,6 +1,10 @@
 {
   "name": "github-explorer",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Allan Kildare",
+    "url": "https://allankildare.github.io/"
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
