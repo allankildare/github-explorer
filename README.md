@@ -19,7 +19,7 @@ Você poderá:
 
 Se trata de um desafio técnico e no tempo oferecido eu consegui desenvolver satisfatoriamente o proposto. Ainda assim, existem pontos de melhorias já mapeadas, são elas:
 - [ ] Separação de componentes independentes
-- [ ] Adição de tipagens mais fortes
+- [ ] Criação de estilizações em módulos do Sass (possível criação de um tema)
 - [ ] Adição de regras do Eslint para melhorar a experiência de desenvolvimento e boas práticas de código
 - [ ] Instalação do Jest e Testing Library, criação de testes unitários
 
