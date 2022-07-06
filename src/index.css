@@ -1,5 +1,9 @@
 :root {
+  --white: #f2f2f2;
+  --black: #0d0d0d;
   --gray: rgb(20, 20, 20);
+  --medium-gray: #828282;
+  --light-gray: #d1d1d1;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -7,4 +11,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
 }
