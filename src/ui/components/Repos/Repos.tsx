@@ -5,6 +5,7 @@ import { RepoCard } from './../RepoCard'
 import style from './Repos.module.scss'
 import { Loader } from '../Loader'
 import { Alert } from '../Alert'
+import { Repository } from '~/types'
 
 export function Repos() {
   const { user } = useParams()
@@ -43,16 +44,13 @@ export function Repos() {
           <Choose.When condition={hasRepositories}>
             <For
               of={repositories}
-              render={(repo: any) => {
+              render={(repo: Repository) => {
                 return (
                   <RepoCard
                     key={repo?.id}
-                    user={user}
                     name={repo?.name}
                     description={repo?.description}
                     url={repo?.html_url}
-                    defaultBranch={repo?.default_branch}
-                    branchesUrl={repo?.branches_url}
                     language={repo?.language}
                   />
                 )
